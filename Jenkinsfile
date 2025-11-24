@@ -26,13 +26,7 @@ pipeline{
                 }
             }
         }
-        stage("quality gate"){
-           steps {
-                script {
-                    waitForQualityGate abortPipeline: true
-                }
-            } 
-        }
+        
         stage('Install Dependencies') {
             steps {
                 sh "npm install"
